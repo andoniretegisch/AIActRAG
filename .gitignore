@@ -1,0 +1,45 @@
+
+# Virtual environment
+aiactrag/
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editor and OS files
+.vscode/
+.DS_Store
+Thumbs.db
+
+
+# Generated data
+data/processed/
+
+# Embeddings and model artifacts
+embeddings/
+*.npy
+*.npz
+*.pt
+*.pth
+*.safetensors
+*.onnx
+
+# Vector databases and indexes
+chroma_db/
+chroma/
+.faiss/
+*.faiss
+*.index
+
+# Downloaded models and datasets
+models/
