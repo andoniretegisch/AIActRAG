@@ -16,14 +16,21 @@ CHAPTER_ID_PATTERN = re.compile(r"^cpt_[IVXLCDM]+$")
 ARTICLE_ID_PATTERN = re.compile(r"^art_\d+[a-z]?$", re.IGNORECASE)
 
 
+
 def get_readable_text(element: Tag) -> str:
-    """Extract readable text while preserving paragraph boundaries."""
-    text = element.get_text("\n", strip=True)
+    """Extract readable text while preserving paragraph and list boundaries."""
+    # Extract text without inserting newlines between every HTML element.
+    text = element.get_text(" ", strip=True)
 
-    lines = [line.strip() for line in text.splitlines()]
-    lines = [line for line in lines if line]
+    # Normalize non-breaking spaces and other unusual whitespace.
+    text = text.replace("\u00a0", " ")
+    text = re.sub(r"\s+", " ", text)
 
-    return "\n".join(lines)
+    # Remove common EUR-Lex revision markers from the extracted text.
+    text = re.sub(r"▼\s*[A-Z]\d*\b", "", text)
+
+    return text.strip()
+
 
 def get_section_title(section: Tag) -> str | None:
     """Extract the descriptive title of a section."""
