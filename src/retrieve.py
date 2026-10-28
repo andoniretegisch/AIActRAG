@@ -47,21 +47,25 @@ def retrieve(query, model, embeddings, metadata, top_k=TOP_K):
 
 
 def main():
-    query = "Is human oversight needed for AI Systems?"
+    queries = ["Does the AI Act apply to military AI?",
+               "Does the AI Act apply to AI systems used exclusively for military purposes?",
+               "Does the AI Act apply to AI systems used exclusively for military, defence or national security purposes, regardless of who provides them?"]
 
     model = SentenceTransformer(MODEL_NAME)
     embeddings, metadata = load_data()
 
-    results = retrieve(query, model, embeddings, metadata)
+    for query in queries:
+        results = retrieve(query, model, embeddings, metadata)
 
-    for rank, result in enumerate(results, start=1):
-        article = result["article"]
+        for rank, result in enumerate(results, start=1):
+            article = result["article"]
 
-        print(f"\n--- Result {rank} ---")
-        print(f"Similarity: {result['score']:.4f}")
-        print(f"Article: {article.get('article_number', 'Unknown')}")
-        print(f"Title: {article.get('title', 'Unknown')}")
-        print(article["text"])
+            print(f"\n--- Result {rank} ---")
+            print(f"Similarity: {result['score']:.4f}")
+            print(f"Query: {query}")
+            print(f"Article: {article.get('article_number', 'Unknown')}")
+            print(f"Title: {article.get('article_title', 'Unknown')}")
+            print(article["text"])
 
 
 if __name__ == "__main__":

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "scope_001",
+    "category": "scope",
+    "question": "Does the AI Act apply to AI systems used exclusively for military purposes?",
+    "relevant_articles": ["Article 2"],
+    "relevant_chunks": ["art_2_3"]
+  },
+  {
+    "id": "scope_001",
+    "category": "scope",
+    "question": "Does the AI Act apply to AI systems or models developed and put into service exclusively for scientific research and development?",
+    "relevant_articles": ["Article 2"],
+    "relevant_chunks": ["art_2_4"]
+  },
+  {
+    "id": "scope_002",
+    "category": "scope",
+    "question": "If an AI system is provided or deployed by an organization outside the EU, but its output is used within the EU, does the Act apply?",
+    "relevant_articles": [],
+    "relevant_chunks": []
+  },
+  {
+    "id": "scope_003",
+    "category": "scope",
+    "question": "Are natural persons using AI systems privately, outside any professional activity, subject to the Act's deployer obligations?",
+    "relevant_articles": [],
+    "relevant_chunks": []
+  },
+  {
+    "id": "scope_004",
+    "category": "scope",
+    "question": "If Union harmonisation legislation listed in Section A of Annex I provides an equivalent or higher level of protection for health, safety, or fundamental rights, can the corresponding AI Act requirements or obligations be limited?",
+    "relevant_articles": [],
+    "relevant_chunks": []
+  }
+]
+
