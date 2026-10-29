@@ -29,7 +29,7 @@ def main() -> None:
 
     model = SentenceTransformer(MODEL_NAME)
 
-    texts = [chunk["text"] for chunk in chunks]
+    texts = [chunk["embedding_text"] for chunk in chunks]
 
     embeddings = model.encode(
         texts,

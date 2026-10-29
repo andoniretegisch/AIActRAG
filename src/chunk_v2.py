@@ -49,7 +49,8 @@ def create_chunks(articles: list[dict], model) -> list[dict]:
                 "chunk_index": chunk_index,
                 "start_token": start,
                 "end_token": min(end, len(token_ids)),
-                "text": text,
+                "embedding_text": article["article_title"]+ " : " + text,
+                "text": text
             })
 
             if end >= len(token_ids):
