@@ -40,16 +40,14 @@ def retrieve(query, model, embeddings, metadata, top_k=TOP_K):
 
         results.append({
             "score": float(similarities[index]),
-            "article": chunk,
+            "article": chunk
         })
 
     return results
 
 
 def main():
-    queries = ["Does the AI Act apply to military AI?",
-               "Does the AI Act apply to AI systems used exclusively for military purposes?",
-               "Does the AI Act apply to AI systems used exclusively for military, defence or national security purposes, regardless of who provides them?"]
+    queries = ["Does the AI Act apply to AI systems used exclusively for military, defence or national security purposes, regardless of who provides them?"]
 
     model = SentenceTransformer(MODEL_NAME)
     embeddings, metadata = load_data()
@@ -60,12 +58,13 @@ def main():
         for rank, result in enumerate(results, start=1):
             article = result["article"]
 
-            print(f"\n--- Result {rank} ---")
+            print(f"\n--- Rank: {rank} ---")
             print(f"Similarity: {result['score']:.4f}")
             print(f"Query: {query}")
             print(f"Article: {article.get('article_number', 'Unknown')}")
             print(f"Title: {article.get('article_title', 'Unknown')}")
-            print(article["text"])
+            print(f"Chunk id: {article["chunk_id"]}")
+            print(f"Text: {article["text"]}")
 
 
 if __name__ == "__main__":

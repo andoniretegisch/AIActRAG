@@ -2,56 +2,30 @@
 
 A fully local **Retrieval-Augmented Generation (RAG) chatbot** based on the European Union AI Act.
 
-This project explores how RAG works, from document processing and chunking to embeddings, semantic retrieval, and eventually local answer generation. It uses free and open-source tools and is developed as a learning project.
+This project explores RAG, from document processing and embeddings to semantic retrieval and local answer generation, using free and open-source tools.
 
 ## Progress
 
-- Extracted and cleaned the EU AI Act from EUR-Lex.
-- Structured 119 articles with metadata, including article numbers, titles, chapters, and sections.
-- Implemented and analyzed an initial chunking strategy with one chunk per article.
-- Identified that article-level chunks were too large for the embedding model's context limit.
-- Implemented a token-based chunking strategy using 200-token chunks with 40-token overlap.
-- Generated 428 chunks and analyzed their token lengths to ensure they fit within the embedding model's context limit.
-- Implemented semantic embeddings using `sentence-transformers/all-MiniLM-L6-v2` (384 dimensions).
-- Generated and saved normalized embeddings locally, together with metadata linking each embedding to its corresponding chunk.
-- Implemented an initial semantic retrieval pipeline using cosine similarity to retrieve relevant passages for a query.
-- Started investigating retrieval quality through query experiments, including questions about the AI Act's scope and military, defence, and national security exclusions.
-- Started building a manually annotated evaluation dataset to assess retrieval quality using relevant articles and chunks.
-
-## Current pipeline
-
-1. **Document ingestion:** Extract and clean the AI Act from EUR-Lex.
-2. **Chunking:** Split the articles into token-based chunks, preserving article metadata.
-3. **Embedding generation:** Encode the chunks using a local Sentence Transformer model.
-4. **Semantic retrieval:** Embed a query and retrieve the most similar chunks using cosine similarity.
-5. **Evaluation:** Compare retrieved chunks against manually annotated relevant passages.
-6. **Generation:** Integrate a local language model to generate answers grounded in retrieved passages.
+- Extracted and cleaned the AI Act from EUR-Lex, structuring 119 articles with metadata.
+- Implemented token-based chunking (200 tokens, 40-token overlap), generating 428 chunks.
+- Generated normalized embeddings using `sentence-transformers/all-MiniLM-L6-v2` (384 dimensions).
+- Implemented semantic retrieval using cosine similarity, returning relevant passages with article metadata and chunk IDs.
+- Started building a manually annotated dataset to evaluate retrieval quality.
 
 ## Next
 
-- Build an evaluation dataset covering different topics and question formulations in the AI Act.
-- Establish a retrieval baseline using the current chunking strategy and embedding model.
-- Evaluate retrieval quality using Recall@5, Mean Reciprocal Rank (MRR), and Precision@5.
-- Experiment with alternative chunking strategies, including paragraph-based chunking, and compare their retrieval performance.
-- Investigate hybrid retrieval combining semantic search and lexical search (BM25).
-- Compare embedding models under controlled conditions.
-- Integrate a local language model for answer generation, using retrieved passages as context.
-- Evaluate answer quality, relevance, and grounding in the source legislation.
+- Complete the evaluation dataset and annotate relevant articles and chunks.
+- Evaluate retrieval using Recall@5, MRR, and Precision@5.
+- Integrate a local language model to generate answers grounded in retrieved passages.
+- Create a Jupyter notebook demonstrating the pipeline, retrieval results, and evaluation metrics.
 
 ## Technologies
 
-- Python
-- BeautifulSoup
-- NumPy
-- Sentence Transformers
-- `all-MiniLM-L6-v2`
-- Git
+Python · BeautifulSoup · NumPy · Sentence Transformers · Jupyter Notebook · Git
 
 ## Status
 
-**In development**
-
-Currently focused on understanding and evaluating the retrieval pipeline before integrating answer generation.
+**In development** — building a complete local RAG pipeline and evaluating retrieval performance.
 
 ## Disclaimer
 
