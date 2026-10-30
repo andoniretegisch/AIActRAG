@@ -22,7 +22,11 @@ def load_data():
     return embeddings, metadata
 
 
-def retrieve(query, model, embeddings, metadata, top_k=TOP_K):
+def retrieve(query, top_k=TOP_K):
+
+    model = SentenceTransformer(MODEL_NAME)
+    embeddings, metadata = load_data()
+     
     query_embedding = model.encode(
         query,
         normalize_embeddings=True,
@@ -49,11 +53,10 @@ def retrieve(query, model, embeddings, metadata, top_k=TOP_K):
 def main():
     queries = ["Does the AI Act apply to AI systems used exclusively for military, defence or national security purposes, regardless of who provides them?"]
 
-    model = SentenceTransformer(MODEL_NAME)
-    embeddings, metadata = load_data()
+   
 
     for query in queries:
-        results = retrieve(query, model, embeddings, metadata)
+        results = retrieve(query)
 
         for rank, result in enumerate(results, start=1):
             article = result["article"]
