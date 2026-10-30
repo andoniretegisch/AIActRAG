@@ -37,37 +37,72 @@
   {
     "id": "prohibited_practices_001",
     "category": "prohibited_practices",
-    "question": "",
-    "relevant_articles": [""],
-    "relevant_chunks": [""]
+    "question": "Does the AI Act prohibit AI systems that create or expand facial recognition databases by untargetedly scraping facial images from the internet or CCTV footage?",
+    "relevant_articles": ["Article 5"],
+    "relevant_chunks": ["art_5_5"]
   },
   {
     "id": "prohibited_practices_002",
     "category": "prohibited_practices",
-    "question": "",
-    "relevant_articles": [""],
-    "relevant_chunks": [""]
+    "question": "Does the AI Act override prohibitions under other EU laws when an AI practice violates those laws?",
+    "relevant_articles": ["Article 5"],
+    "relevant_chunks": ["art_5_16"]
   },
   {
     "id": "prohibited_practices_003",
     "category": "prohibited_practices",
-    "question": "",
-    "relevant_articles": [""],
-    "relevant_chunks": [""]
+    "question": "Does the AI Act prohibit AI systems that generate or manipulate realistic intimate images or sexually explicit content depicting an identifiable person without their explicit consent?",
+    "relevant_articles": ["Article 5"],
+    "relevant_chunks": ["art_5_2"]
   },
   {
     "id": "prohibited_practices_004",
     "category": "prohibited_practices",
-    "question": "",
-    "relevant_articles": [""],
-    "relevant_chunks": [""]
+    "question": "Can AI systems manipulate people's decisions in ways that cause them serious harm?",
+    "relevant_articles": ["5"],
+    "relevant_chunks": ["art_5_1"]
   },
   {
     "id": "prohibited_practices_005",
     "category": "prohibited_practices",
-    "question": "",
-    "relevant_articles": [""],
-    "relevant_chunks": [""]
+    "question": "Can law enforcement use real-time facial recognition in public places to find missing or abducted people?",
+    "relevant_articles": ["Article 5"],
+    "relevant_chunks": ["art_5_6"]
+  },
+  {
+    "id": "high_risk_001",
+    "category": "high_risk",
+    "question": "Can an AI provider decide that a system is not high-risk, and what must they do to justify that decision?",
+    "relevant_articles": ["Article 6"],
+    "relevant_chunks": ["art_6_4"]
+  },
+  {
+    "id": "high_risk_002",
+    "category": "high_risk",
+    "question": "Why must high-risk AI systems be tested before being put into use?",
+    "relevant_articles": ["Article 9"],
+    "relevant_chunks": ["art_9_4"]
+  },
+  {
+    "id": "high_risk_003",
+    "category": "high_risk",
+    "question": "What data must be used to train high-risk AI systems to ensure they meet the AI Act's requirements?",
+    "relevant_articles": ["Article 10"],
+    "relevant_chunks": ["art_10_1"]
+  },
+  {
+    "id": "high_risk_004",
+    "category": "high_risk",
+    "question": "When must technical documentation for high-risk AI systems be prepared and updated?",
+    "relevant_articles": ["Article 11"],
+    "relevant_chunks": ["art_11_1"]
+  },
+  {
+    "id": "high_risk_005",
+    "category": "high_risk",
+    "question": "How must high-risk AI systems ensure that deployers can interpret their outputs and use them appropriately?",
+    "relevant_articles": ["Article 13"],
+    "relevant_chunks": ["art_13_1"]
   }
 ]
 

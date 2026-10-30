@@ -37,6 +37,11 @@ def create_chunks(articles: list[dict], model) -> list[dict]:
                 clean_up_tokenization_spaces=True,
             ).strip()
 
+            if chunk_index == 1:
+                embedding_text =  text
+            else:
+                embedding_text = article["article_title"]+ " : " + text
+
             chunks.append({
                 "chunk_id": f"{article['article_id']}_{chunk_index}",
                 "article_id": article["article_id"],
@@ -49,7 +54,7 @@ def create_chunks(articles: list[dict], model) -> list[dict]:
                 "chunk_index": chunk_index,
                 "start_token": start,
                 "end_token": min(end, len(token_ids)),
-                "embedding_text": article["article_title"]+ " : " + text,
+                "embedding_text": embedding_text,
                 "text": text
             })
 
