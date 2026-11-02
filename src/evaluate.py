@@ -17,10 +17,10 @@ def load_dataset(path):
 
 def evaluate_question(item):
     question = item["question"]
-    relevant_chunks = set(item["relevant_chunks"])
+    relevant_chunks = set(str(cid) for cid in item["relevant_chunks"])
 
     results = retrieve(question, top_k=TOP_K)
-   
+
     retrieved_ids = [
         str(result["article"]["chunk_id"])
         for result in results
@@ -31,8 +31,7 @@ def evaluate_question(item):
         if chunk_id in relevant_chunks
     ]
 
-    recall = len(set(hits)) / len(relevant_chunks)
-
+    recall = len(set(hits)) / len(relevant_chunks) if relevant_chunks else 0
     precision = len(set(hits)) / TOP_K
 
     reciprocal_rank = 0
@@ -42,6 +41,8 @@ def evaluate_question(item):
             reciprocal_rank = 1 / rank
             break
 
+
+
     return {
         "id": item["id"],
         "question": question,
@@ -50,7 +51,6 @@ def evaluate_question(item):
         "reciprocal_rank": reciprocal_rank,
         "retrieved_chunks": retrieved_ids,
     }
-
 
 def main():
     dataset = load_dataset(DATASET_PATH)
@@ -66,7 +66,6 @@ def main():
         print("Dataset is empty.")
         return
 
-    # Aggregate metrics
     mean_recall = sum(
         r["recall@5"] for r in results
     ) / n

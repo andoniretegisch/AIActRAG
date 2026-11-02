@@ -32,7 +32,7 @@
     "category": "scope",
     "question": "If Union harmonisation legislation listed in Section A of Annex I provides an equivalent or higher level of protection for health, safety, or fundamental rights, can the corresponding AI Act requirements or obligations be limited?",
     "relevant_articles": ["Article 2"],
-    "relevant_chunks": ["art_2_6"]
+    "relevant_chunks": ["art_2_6", "art_2_7"]
   },
   {
     "id": "prohibited_practices_001",
@@ -45,8 +45,8 @@
     "id": "prohibited_practices_002",
     "category": "prohibited_practices",
     "question": "Does the AI Act override prohibitions under other EU laws when an AI practice violates those laws?",
-    "relevant_articles": ["Article 5"],
-    "relevant_chunks": ["art_5_16"]
+    "relevant_articles": ["Article 2","Article 5"],
+    "relevant_chunks": ["art_2_5","art_5_16"]
   },
   {
     "id": "prohibited_practices_003",
@@ -67,7 +67,7 @@
     "category": "prohibited_practices",
     "question": "Can law enforcement use real-time facial recognition in public places to find missing or abducted people?",
     "relevant_articles": ["Article 5"],
-    "relevant_chunks": ["art_5_6"]
+    "relevant_chunks": ["art_5_6", "art_5_13", "art_5_10"]
   },
   {
     "id": "high_risk_001",
@@ -88,7 +88,7 @@
     "category": "high_risk",
     "question": "What data must be used to train high-risk AI systems to ensure they meet the AI Act's requirements?",
     "relevant_articles": ["Article 10"],
-    "relevant_chunks": ["art_10_1"]
+    "relevant_chunks": ["art_10_1", "art_10_3"]
   },
   {
     "id": "high_risk_004",
@@ -101,8 +101,8 @@
     "id": "high_risk_005",
     "category": "high_risk",
     "question": "How must high-risk AI systems ensure that deployers can interpret their outputs and use them appropriately?",
-    "relevant_articles": ["Article 13"],
-    "relevant_chunks": ["art_13_1"]
+    "relevant_articles": ["Article 13", "Article 14"],
+    "relevant_chunks": ["art_13_1", "art_14_2"]
   }
 ]
 
