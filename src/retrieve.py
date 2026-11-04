@@ -53,7 +53,6 @@ def retrieve(query, top_k=TOP_K):
 def main():
     queries = ["Does the AI Act apply to AI systems used exclusively for military, defence or national security purposes, regardless of who provides them?"]
 
-   
 
     for query in queries:
         results = retrieve(query)
