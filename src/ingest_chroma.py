@@ -23,7 +23,7 @@ def main():
     collection = persistent_client.get_or_create_collection("ai_act_chunks", metadata={"hnsw:space":"cosine"})
     embeddings, documents, ids, metadatas = get_data()
     collection.add(ids, embeddings, metadatas, documents)
-
+    print(collection.count())
 
 
 if __name__ == "__main__":
