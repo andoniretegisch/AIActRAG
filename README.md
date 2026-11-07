@@ -2,7 +2,7 @@
 
 A fully local **Retrieval-Augmented Generation (RAG) chatbot** based on the European Union AI Act.
 
-This project explores the development of a RAG pipeline, from document processing and embeddings to semantic retrieval and local answer generation, using free and open-source tools.
+This project explores the development of an end-to-end RAG pipeline, from document processing and embeddings to semantic retrieval and local answer generation, using free and locally runnable tools.
 
 ## Progress
 
@@ -12,24 +12,27 @@ This project explores the development of a RAG pipeline, from document processin
 - Implemented semantic retrieval using cosine distance.
 - Integrated **ChromaDB** for persistent vector storage and similarity search, reusing the previously generated embeddings.
 - Implemented retrieval result formatting, including article references, metadata, chunk IDs, distances, and text.
-- Built a prompt preparation function that combines instructions, retrieved passages, and the user's question, with emphasis on grounded answers, source references, and abstention when evidence is insufficient.
+- Built a prompt preparation function combining instructions, retrieved passages, and the user's question, with emphasis on grounded answers, source references, and abstention when evidence is insufficient.
+- Integrated **Ollama** and **Gemma 3 (4B)** for local answer generation.
+- Built and tested an end-to-end RAG pipeline connecting query embedding, retrieval, prompt preparation, and answer generation.
 - Created a manually annotated dataset to evaluate retrieval quality.
 
 ## Next
 
 - Finalize the retrieval evaluation dataset and annotations.
 - Analyze retrieval performance using Recall@5, MRR, and Precision@5.
-- Integrate a local language model through Ollama to generate answers grounded in retrieved passages.
-- Evaluate answer quality, faithfulness, citation accuracy, and the model's ability to abstain when evidence is insufficient.
+- Evaluate answer quality, factual correctness, faithfulness to retrieved context, and citation accuracy.
+- Test the model's ability to recognize insufficient evidence and abstain rather than generate unsupported answers.
+- Investigate potential improvements to retrieval and generation through controlled experiments.
 - Create a Jupyter notebook demonstrating the pipeline, retrieval results, and evaluation metrics.
 
 ## Technologies
 
-Python · BeautifulSoup · NumPy · Sentence Transformers · ChromaDB · Ollama · Jupyter Notebook · Git
+Python · BeautifulSoup · NumPy · Sentence Transformers · ChromaDB · Ollama · Gemma 3 · Jupyter Notebook · Git
 
 ## Status
 
-**In development** — building and evaluating a complete local RAG pipeline.
+**In development** — end-to-end local RAG pipeline implemented; evaluation and experimentation ongoing.
 
 ## Disclaimer
 
